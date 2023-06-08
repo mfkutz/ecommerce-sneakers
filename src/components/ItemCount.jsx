@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import minus from '../assets/svg/icon-minus.svg'
 import plus from '../assets/svg/icon-plus.svg'
 import cart2 from '../assets/svg/icon-cart-white.svg'
@@ -8,7 +8,6 @@ const ItemCount = ({ stock, initial, product }) => {
 
     const { addToCart } = useContext(Context)
     const [qOfItem, setqOfItem] = useState(initial)
-
 
     function decrement() {
         if (qOfItem > 1) {

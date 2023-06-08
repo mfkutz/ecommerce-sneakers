@@ -36,7 +36,7 @@ const ItemCount = ({ stock, initial, product }) => {
             </div>
 
             <button
-                className='flex gap-4 bg-OrangeDark text-white text-[15px] fontB min-w-[240px] justify-center py-4 rounded-xl'
+                className='flex gap-4 bg-OrangeDark text-white text-[15px] fontB min-w-[240px] justify-center py-4 rounded-xl hover:bg-[rgb(255,172,106)]'
                 onClick={() => addToCart(product, qOfItem)}
             >
                 <img src={cart2} alt="cart" />

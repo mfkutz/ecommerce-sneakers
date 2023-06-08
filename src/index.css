@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url(./assets/fonts/KumbhSans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url(./assets/fonts/KumbhSans-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.fontN {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fontB {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-size: 16px;
+        font-family: 'Kumbh Sans', sans-serif;
+
+    }
+}
+
+.gray-soft {
+    color: rgb(147, 148, 152);
+}
+
+.btn:hover {
+    /* border-bottom: 3px solid #ff7d1b; */
+    box-shadow: inset 0 -4px 0 #ff7d1b;
+    cursor: pointer;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(201, 17, 17, 0.7);
+    /* Puedes ajustar el color y la opacidad aquí */
+    pointer-events: none;
+    /* Esto asegura que la capa no interfiera con los eventos de clic */
+}

@@ -83,8 +83,8 @@ const ItemDetail = () => {
                     {/*//////////////////// MOBILE CAROUSEL////////////////////////////*/}
                     <div className="max-w-[440px] desktop-disabled mobile-active relative flex justify-end">
 
-                        <div className='cursor-pointer h-[300px] overflow-hidden ob '>
-                            <img src={product.image[selectImg]} alt="pic" className='self-end' />
+                        <div className='cursor-pointer h-[330px] overflow-hidden '>
+                            <img src={product.image[selectImg]} alt="pic" className='' />
                         </div>
 
 

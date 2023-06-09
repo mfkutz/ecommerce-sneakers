@@ -10,6 +10,7 @@ const ItemDetail = () => {
     const [product, setProduct] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [selectImg, setSelectImg] = useState(0)
+    const [imageId, setImageId] = useState(0)
 
     useEffect(() => {
         const fetchData = () => {
@@ -41,6 +42,30 @@ const ItemDetail = () => {
         const selectedImageId = parseInt(e.currentTarget.id);
         setSelectImg(selectedImageId);
     }
+
+    const nextImage = (e) => {
+        e.preventDefault()
+
+        const currentId = parseInt(e.currentTarget.id)
+        if (currentId < 3) {
+            const nextId = currentId + 1
+            setImageId(nextId)
+            setSelectImg(nextId)
+        }
+    }
+
+    const previousImage = (e) => {
+        e.preventDefault()
+
+        const currentId = parseInt(e.currentTarget.id)
+        if (currentId > 0) {
+            const nextId = currentId - 1
+            setImageId(nextId)
+            setSelectImg(nextId)
+        }
+    }
+
+
 
     return (
         <>
@@ -88,10 +113,10 @@ const ItemDetail = () => {
                         </div>
 
 
-                        <div className='cursor-pointer absolute top-1/2 ml-8' onClick={selectImage} id={0} >
+                        <div className='cursor-pointer absolute top-1/2 ml-8' onClick={previousImage} id={imageId} >
                             <img src={previous} alt="" />
                         </div>
-                        <div className='cursor-pointer absolute top-1/2 right-0 mr-8 ' onClick={selectImage} id={1} >
+                        <div className='cursor-pointer absolute top-1/2 right-0 mr-8 ' onClick={nextImage} id={imageId} >
                             <img src={next} alt="next" />
                         </div>
 

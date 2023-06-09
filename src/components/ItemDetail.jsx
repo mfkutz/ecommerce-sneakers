@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import ItemCount from './ItemCount'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import { Bars } from 'react-loader-spinner'
+import next from '../assets/svg/icon-next.svg'
+import previous from '../assets/svg/icon-previous.svg'
 
 const ItemDetail = () => {
 
@@ -58,8 +60,8 @@ const ItemDetail = () => {
                 :
 
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-28 lg:pt-[85px] z-0 ">
-                    
-                    <div className="max-w-[440px]">
+                    {/*//////////////////// DESKTOP CAROUSEL////////////////////////////*/}
+                    <div className="max-w-[440px] mobile-disabled">
                         <div className='cursor-pointer'>
                             <img src={product.image[selectImg]} alt="pic" className='rounded-[20px]' />
                         </div>
@@ -77,6 +79,23 @@ const ItemDetail = () => {
                                 <img src={product.thumbnail[3]} alt="model shoes" className='max-w-[88px] h-auto rounded-xl' />
                             </div>
                         </div>
+                    </div>
+                    {/*//////////////////// MOBILE CAROUSEL////////////////////////////*/}
+                    <div className="max-w-[440px] desktop-disabled mobile-active relative flex justify-end">
+
+                        <div className='cursor-pointer h-[300px] overflow-hidden ob '>
+                            <img src={product.image[selectImg]} alt="pic" className='self-end' />
+                        </div>
+
+
+                        <div className='cursor-pointer absolute top-1/2 ml-8' onClick={selectImage} id={0} >
+                            <img src={previous} alt="" />
+                        </div>
+                        <div className='cursor-pointer absolute top-1/2 right-0 mr-8 ' onClick={selectImage} id={1} >
+                            <img src={next} alt="next" />
+                        </div>
+
+
                     </div>
 
                     <div className="max-w-[440px] p-6 lg:p-0">

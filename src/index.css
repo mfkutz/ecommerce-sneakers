@@ -59,7 +59,9 @@
     pointer-events: none;
     /* Esto asegura que la capa no interfiera con los eventos de clic */
 }
-
+.toast-custom{
+    bottom: -60px;
+}
 .desktop-disabled {
     display: none;
 }

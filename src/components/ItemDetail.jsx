@@ -116,7 +116,7 @@ const ItemDetail = () => {
                         <div className='flex justify-center items-center w-10 h-10 rounded-full bg-gray-50 cursor-pointer absolute top-1/2 ml-4 transform -translate-y-1/2' onClick={previousImage} id={imageId} >
                             <img src={previous} alt="previous" className='rounded-full' />
                         </div>
-                        <div className='flex justify-center items-center w-10 h-10 rounded-full bg-gray-50 cursor-pointer absolute top-1/2 right-0 mr-4 transform -translate-y-1/2' onClick={nextImage} id={imageId} >
+                        <div className='flex justify-center items-center w-10 h-10 rounded-full bg-gray-50 cursor-pointer absolute top-1/2 right-0 mr-4gi transform -translate-y-1/2' onClick={nextImage} id={imageId} >
                             <img src={next} alt="next" className=' rounded-full' />
                         </div>
 

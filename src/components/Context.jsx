@@ -1,4 +1,6 @@
 import { createContext, useState } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Context = createContext()
 
@@ -19,12 +21,35 @@ export const ContextProvider = ({ children }) => {
                 return item
             })
             setCartList(updatedCart)
+
+            toast.success('Product added!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                className: 'toast-custom',
+            })
+
         } else {
             const newItem = {
                 product,
                 qOfItem
             }
             setCartList([...cartList, newItem])
+            toast.success('Product added!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            })
         }
 
     }
@@ -41,6 +66,18 @@ export const ContextProvider = ({ children }) => {
             removeProduct
         }}>
             {children}
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </Context.Provider>
     )
 }

@@ -22,7 +22,7 @@ const NavBar = () => {
             </ul>
           </nav>
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-center z-10'>
           <div className='lg:mr-12 mr-5'><CartWidget /></div>
           <div><User /></div>
         </div>

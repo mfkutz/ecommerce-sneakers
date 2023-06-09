@@ -59,7 +59,7 @@ const ItemDetail = () => {
 
                 :
 
-                <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-28 lg:pt-[85px] z-0 ">
+                <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-28 lg:pt-[85px] ">
                     {/*//////////////////// DESKTOP CAROUSEL////////////////////////////*/}
                     <div className="max-w-[440px] mobile-disabled">
                         <div className='cursor-pointer'>
@@ -81,7 +81,7 @@ const ItemDetail = () => {
                         </div>
                     </div>
                     {/*//////////////////// MOBILE CAROUSEL////////////////////////////*/}
-                    <div className="max-w-[440px] desktop-disabled mobile-active relative -z-10">
+                    <div className="max-w-[440px] desktop-disabled mobile-active relative ">
 
                         <div className='cursor-pointer h-[330px] overflow-hidden '>
                             <img src={product.image[selectImg]} alt="pic" className='' />

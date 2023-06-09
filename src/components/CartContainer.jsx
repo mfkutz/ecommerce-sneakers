@@ -7,7 +7,7 @@ const CartContainer = () => {
     const { cartList } = useContext(Context)
 
     return (
-        <div className="bg-white min-w-[350px] min-h-[250px] absolute top-16 -right-44 rounded-lg shadow-2xl z-100">
+        <div className="bg-white min-w-[350px] min-h-[250px] absolute lg:top-16 lg:-right-44 top-12 -right-14 rounded-lg shadow-2xl z-100">
             <div className="p-5 fontB rounded-t-lg border-b border-gray-200">
                 Cart
             </div>

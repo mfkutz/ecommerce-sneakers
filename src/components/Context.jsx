@@ -24,13 +24,13 @@ export const ContextProvider = ({ children }) => {
 
             toast.success('Product added!', {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 1400,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "light",
                 className: 'toast-custom',
             })
 
@@ -42,13 +42,13 @@ export const ContextProvider = ({ children }) => {
             setCartList([...cartList, newItem])
             toast.success('Product added!', {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 1400,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "light",
             })
         }
 
@@ -76,7 +76,7 @@ export const ContextProvider = ({ children }) => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme="dark"
+                theme="light"
             />
         </Context.Provider>
     )

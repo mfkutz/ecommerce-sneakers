@@ -8,6 +8,20 @@ export const ContextProvider = ({ children }) => {
 
     const [cartList, setCartList] = useState([])
 
+    const showToastSucess = (menssage) => {
+        toast.success(menssage, {
+            position: "top-right",
+            autoClose: 1400,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            className: 'toast-custom',
+        })
+    }
+
     const addToCart = (product, qOfItem) => {
         const existingItem = cartList.find(item => item.product.id === product.id);
         if (existingItem) {
@@ -21,18 +35,7 @@ export const ContextProvider = ({ children }) => {
                 return item
             })
             setCartList(updatedCart)
-
-            toast.success('Product added!', {
-                position: "top-right",
-                autoClose: 1400,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                className: 'toast-custom',
-            })
+            showToastSucess('Product added!')
 
         } else {
             const newItem = {
@@ -40,16 +43,7 @@ export const ContextProvider = ({ children }) => {
                 qOfItem
             }
             setCartList([...cartList, newItem])
-            toast.success('Product added!', {
-                position: "top-right",
-                autoClose: 1400,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            })
+            showToastSucess('Product added!')
         }
 
     }

@@ -62,6 +62,9 @@
 .toast-custom{
     bottom: -60px;
 }
+.special-background-menu {
+    box-shadow: 0 0 0 100vmax rgba(18, 19, 23, 0.756);
+}
 .desktop-disabled {
     display: none;
 }
@@ -76,5 +79,6 @@
     .mobile-active {
         display: block;
     }
+
 
 }

@@ -59,3 +59,20 @@
     pointer-events: none;
     /* Esto asegura que la capa no interfiera con los eventos de clic */
 }
+
+.desktop-disabled {
+    display: none;
+}
+
+/* MQUERIES */
+@media (max-width: 1024px) {
+
+    .mobile-disabled {
+        display: none;
+    }
+
+    .mobile-active {
+        display: block;
+    }
+
+}

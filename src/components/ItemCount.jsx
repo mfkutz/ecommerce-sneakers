@@ -22,12 +22,13 @@ const ItemCount = ({ stock, initial, product }) => {
     }
 
     return (
-        <>
-            <div className='relative flex gap-16 bg-gray-100 min-w-[154px] items-center justify-center rounded-xl'>
+        <div className='flex flex-col lg:flex-row lg:gap-4 gap-4 justify-center'>
+
+            <div className='relative flex gap-16 bg-gray-100 lg:min-w-[154px] items-center lg:justify-center rounded-xl justify-between lg:px-0 px-3 py-[10px] lg:py-0'>
                 <div className='p-3 cursor-pointer' onClick={decrement}>
                     <img src={minus} alt="minus" />
                 </div>
-                <div className='fontB text-gray-900 absolute'>
+                <div className='fontB text-gray-900 absolute left-1/2'>
                     {qOfItem}
                 </div>
                 <div className='p-3 cursor-pointer' onClick={increment}>
@@ -36,14 +37,14 @@ const ItemCount = ({ stock, initial, product }) => {
             </div>
 
             <button
-                className='flex gap-4 bg-OrangeDark text-white text-[15px] fontB min-w-[240px] justify-center py-4 rounded-xl hover:bg-[rgb(255,172,106)]'
+                className='flex gap-4 bg-OrangeDark text-white text-[15px] fontB lg:min-w-[240px] justify-center py-4 rounded-xl hover:bg-[rgb(255,172,106)]'
                 onClick={() => addToCart(product, qOfItem)}
             >
                 <img src={cart2} alt="cart" />
                 Add to Cart
             </button>
-        </>
 
+        </div>
     )
 }
 

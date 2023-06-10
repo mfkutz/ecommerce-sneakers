@@ -9,7 +9,6 @@ const NavBar = () => {
 
   const [mobileMenu, setMenuMobile] = useState(false)
 
-
   return (
     <div className='flex justify-center relative'>
       <header className='flex items-center lg:border-b border-gray-200 lg:w-[77%] w-full lg:p-0 p-4 px-5  justify-between '>

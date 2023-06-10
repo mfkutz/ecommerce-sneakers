@@ -63,7 +63,8 @@
 .toast-custom {
     bottom: -60px;
 }
-.hover-color{
+
+.hover-color {
     fill: red;
 }
 
@@ -78,6 +79,24 @@
 .special-background-pic {
     background-color: rgba(18, 19, 23, 0.756);
 }
+
+/********* LATERAL TRANSITION MENU MOBILE************/
+.slide-in {
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 .desktop-disabled {
     display: none;
@@ -97,6 +116,5 @@
     .mobile-active {
         display: block;
     }
-
 
 }

@@ -31,7 +31,7 @@ const NavBar = () => {
           </nav>
 
           {/* //////////////////MOBILE MENU////////////////// */}
-          <div className={`z-50 top-0 left-0 absolute bg-white ${mobileMenu ? 'mobile-active' : ''}  desktop-disabled special-background-menu min-h-screen`}>
+          <div className={`z-50 top-0 left-0 absolute bg-white ${mobileMenu ? 'mobile-active slide-in ' : ''} desktop-disabled special-background-menu min-h-screen`}>
             <img src={close} onClick={() => setMenuMobile(!mobileMenu)} className='m-7' alt="close icon" />
             <ul className=' flex flex-col w-44 ml-7 bg-white m-10 gap-5 text-lg '>
               <li className='fontB color-gray-800'>Collections</li>

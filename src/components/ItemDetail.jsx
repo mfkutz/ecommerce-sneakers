@@ -5,12 +5,16 @@ import { Bars } from 'react-loader-spinner'
 import next from '../assets/svg/icon-next.svg'
 import previous from '../assets/svg/icon-previous.svg'
 
+//icon for popup
+import close from '../assets/svg/icon-close.svg'
+
 const ItemDetail = () => {
 
     const [product, setProduct] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [selectImg, setSelectImg] = useState(0)
     const [imageId, setImageId] = useState(0)
+    const [popCarousel, setPopCarousel] = useState(false)
 
     useEffect(() => {
         const fetchData = () => {
@@ -65,10 +69,8 @@ const ItemDetail = () => {
         }
     }
 
-
-
     return (
-        <>
+        <div className='relative'>
             {isLoading ?
                 <div className='min-w-[440px] flex justify-center items-center min-h-[60vh]'>
                     <Bars
@@ -87,7 +89,7 @@ const ItemDetail = () => {
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-28 lg:pt-[85px] ">
                     {/*//////////////////// DESKTOP CAROUSEL////////////////////////////*/}
                     <div className="max-w-[440px] mobile-disabled">
-                        <div className='cursor-pointer'>
+                        <div className='cursor-pointer' onClick={() => setPopCarousel(!popCarousel)}>
                             <img src={product.image[selectImg]} alt="pic" className='rounded-[20px]' />
                         </div>
                         <div className='flex justify-between pt-8'>
@@ -105,11 +107,45 @@ const ItemDetail = () => {
                             </div>
                         </div>
                     </div>
+                    {/*//////////////////// DESKTOP CAROUSEL POP////////////////////////////*/}
+                    <div className={`${popCarousel ? 'desktop-disabled' : 'desktop-enabled'}  mobile-disabled absolute -top-5 z-20 `}>
+                        <div className='special-background-menu special-background-pic'>
+
+                            <div className='flex justify-end mb-5'>
+                                <img onClick={() => setPopCarousel(!popCarousel)} src={close} alt="icon close" className='w-5 cursor-pointer hover-color ' />
+                            </div>
+                            <div>
+                                <img src={product.image[selectImg]} alt="pic" className='rounded-[15px] max-w-[540px]' />
+                                <div className='flex justify-center items-center w-14 h-14 rounded-full bg-gray-50 cursor-pointer absolute top-[42%] -left-7 ' onClick={previousImage} id={imageId} >
+                                    <img src={previous} alt="previous" className='rounded-full' />
+                                </div>
+                                <div className='flex justify-center items-center w-14 h-14 rounded-full bg-gray-50 cursor-pointer absolute top-[42%] -right-7 ' onClick={nextImage} id={imageId} >
+                                    <img src={next} alt="next" className=' rounded-full' />
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div className='flex justify-center gap-6 pt-8 '>
+                            <div className='cursor-pointer' onClick={selectImage} id={0} >
+                                <img src={product.thumbnail[0]} alt="model shoes" className='max-w-[92px] h-auto rounded-xl' />
+                            </div>
+                            <div className='cursor-pointer' onClick={selectImage} id={1} >
+                                <img src={product.thumbnail[1]} alt="model shoes" className='max-w-[92px] h-auto rounded-xl' />
+                            </div>
+                            <div className='cursor-pointer' onClick={selectImage} id={2} >
+                                <img src={product.thumbnail[2]} alt="model shoes" className='max-w-[92px] h-auto rounded-xl' />
+                            </div>
+                            <div className='cursor-pointer' onClick={selectImage} id={3}>
+                                <img src={product.thumbnail[3]} alt="model shoes" className='max-w-[92px] h-auto rounded-xl' />
+                            </div>
+                        </div>
+                    </div>
                     {/*//////////////////// MOBILE CAROUSEL////////////////////////////*/}
                     <div className="max-w-[440px] desktop-disabled mobile-active relative ">
 
                         <div className='cursor-pointer h-[330px] overflow-hidden '>
-                            <img src={product.image[selectImg]} alt="pic" className='' />
+                            <img src={product.image[selectImg]} alt="pic" />
                         </div>
 
 
@@ -148,7 +184,7 @@ const ItemDetail = () => {
                 </div>
 
             }
-        </>
+        </div>
     )
 }
 

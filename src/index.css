@@ -59,14 +59,32 @@
     pointer-events: none;
     /* Esto asegura que la capa no interfiera con los eventos de clic */
 }
-.toast-custom{
+
+.toast-custom {
     bottom: -60px;
 }
+.hover-color{
+    fill: red;
+}
+
+.hover-color:hover {
+    fill: #ff7d1b;
+}
+
 .special-background-menu {
     box-shadow: 0 0 0 100vmax rgba(18, 19, 23, 0.756);
 }
+
+.special-background-pic {
+    background-color: rgba(18, 19, 23, 0.756);
+}
+
 .desktop-disabled {
     display: none;
+}
+
+.desktop-enabled {
+    display: block;
 }
 
 /* MQUERIES */
